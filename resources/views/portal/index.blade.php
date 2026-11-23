@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Richwell Hospital Reservation System</title>
     <style>
         @keyframes fadeIn {
@@ -380,9 +381,27 @@
         .slip-box { border: 2px dashed #93c5fd; padding: 20px; background: #f8fafc; border-radius: 10px; margin: 15px 0; }
         .slip-row { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid #e2e8f0; font-size: 13px; }
         @media (max-width: 820px) {
-            .auth-wrapper { grid-template-columns: 1fr; }
-            .flip-card-container { height: 465px; }
+            body { padding: 12px; align-items: flex-start; }
+            .container { padding: 18px; max-height: none; min-height: auto; border-radius: 14px; }
+            .header { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .header-nav { width: 100%; flex-wrap: wrap; justify-content: flex-start; gap: 10px; white-space: normal; }
+            .auth-wrapper { grid-template-columns: 1fr; gap: 18px; }
+            .flip-card-container { max-width: 100%; height: 470px; }
+            .tabs { flex-direction: column; gap: 6px; overflow: visible; }
+            .tab-indicator { display: none; }
+            .tab-btn { flex: none; width: 100%; text-align: left; }
+            .tab-btn.active { background: linear-gradient(135deg, #1e3a8a, #3730a3); color: #ffffff; }
+            #dashboard-section > div:first-child { flex-direction: column; align-items: stretch !important; gap: 10px; }
+            #patientLiveSearch { max-width: 100% !important; width: 100%; }
+            #booking-section form > div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+            table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; }
         }
+        @media (max-width: 480px) {
+            .logo-frame { width: 52px; height: 52px; }
+            .header h1 { font-size: 16px; }
+            .slot-grid { grid-template-columns: 1fr; }
+        }
+        
         @media print {
             body * { visibility: hidden; }
             #printModal, #printModal * { visibility: visible; }
